@@ -30,7 +30,7 @@ export default class App extends React.Component {
       .then(fruit => this.setState({ fruit }));
   }
 
-  handleChange(event){
+  updateFilter(event){
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
   }
@@ -41,7 +41,7 @@ export default class App extends React.Component {
         currentFilter={this.state.currentFilter}
         filters={this.state.filters}
         fruit={this.state.fruit}
-        onChange={this.handleChange}
+        updateFilterCallback={this.updateFilter}
       />
     );
   }
