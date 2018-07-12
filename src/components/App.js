@@ -38,7 +38,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <FruitBasket />
+      <FruitBasket
+        currentFilter={this.state.currentFilter}
+        filters={this.state.filters}
+        fruit={this.state.fruit}
+        onChange={this.handleChange}
+      />
     );
   }
 }
