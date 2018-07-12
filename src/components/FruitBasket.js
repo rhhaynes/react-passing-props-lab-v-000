@@ -5,7 +5,7 @@ import FilteredFruitList from './FilteredFruitList';
 const FruitBasket = ({ currentFilter, filters, fruit, updateFilterCallback }) => {
   return (
     <div className="fruit-basket">
-      <Filter />
+      <Filter filters={filters} handleChange={updateFilterCallback} />
       <FilteredFruitList />
     </div>
   );
