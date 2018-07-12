@@ -9,8 +9,6 @@ export default class App extends React.Component {
       filters: [],
       fruit: []
     };
-
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
