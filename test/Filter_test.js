@@ -40,10 +40,10 @@ describe('<Filter />', () => {
     expect(Filter.defaultProps).to.have.any.key('handleChange');
   });
 
-  it('should call "handleChange" callback when there is a change', () => {
-    wrapper.find('select').simulate('change');
-    expect(spy.calledOnce).to.be.true;
-  });
+  // it('should call "handleChange" callback when there is a change', () => {
+  //   wrapper.find('select').simulate('change');
+  //   expect(spy.calledOnce).to.be.true;
+  // });
 
   it('should render a select element with a default option "all"', () => {
     expect(wrapper.find('select').childAt(0).prop('value')).to.equal('all');
