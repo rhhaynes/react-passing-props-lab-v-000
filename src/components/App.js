@@ -10,7 +10,7 @@ export default class App extends React.Component {
       fruit: []
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
