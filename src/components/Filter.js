@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({filters, handleChange}) => {
+const Filter = ({ filters, handleChange }) => {
   return (
     <select defaultValue='all'>
       <option value='all'>All</option>
