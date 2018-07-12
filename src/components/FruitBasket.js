@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from './Filter';
 import FilteredFruitList from './FilteredFruitList';
 
-const FruitBasket = ({ currentFilter, filters, fruit, onUpdateFilter }) => {
+const FruitBasket = ({ currentFilter, filters, fruit, updateFilterCallback }) => {
   return (
     <div className="fruit-basket">
       <Filter filters={filters} handleChange={updateFilterCallback} />
