@@ -1,6 +1,4 @@
 import React from 'react';
-import Filter from './Filter';
-import FilteredFruitList from './FilteredFruitList';
 import FruitBasket from './FruitBasket';
 
 export default class App extends React.Component {
