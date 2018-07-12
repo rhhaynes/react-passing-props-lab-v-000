@@ -25,6 +25,12 @@ export default class App extends React.Component {
       .then(filters => this.setState({ filters }));
   }
 
+  fetchFruit(){
+    fetch('/api/fruit')
+      .then(response => response.json())
+      .then(fruit => this.setState({ fruit }));
+  }
+
   handleChange(event){
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
