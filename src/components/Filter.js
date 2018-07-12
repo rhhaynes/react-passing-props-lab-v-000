@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Filter = ({filters, handleChange}) => {
+const Filter = ({ filters, handleChange }) => {
   return (
-    <select defaultValue='all'>
+    <select onChange={handleChange} defaultValue='all'>
       <option value='all'>All</option>
       {filters.map(filter => <option key={filter} value={filter}>{filter}</option>)}
     </select>

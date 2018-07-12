@@ -1,6 +1,4 @@
 import React from 'react';
-import Filter from './Filter';
-import FilteredFruitList from './FilteredFruitList';
 import FruitBasket from './FruitBasket';
 
 export default class App extends React.Component {
@@ -11,12 +9,11 @@ export default class App extends React.Component {
       filters: [],
       fruit: []
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.fetchFilters();
+    this.fetchFruit();
   }
 
   fetchFilters(){
@@ -25,17 +22,25 @@ export default class App extends React.Component {
       .then(filters => this.setState({ filters }));
   }
 
-  handleChange(event){
+  fetchFruit(){
+    fetch('/api/fruit')
+      .then(response => response.json())
+      .then(fruit => this.setState({ fruit }));
+  }
+
+  updateFilter(event){
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
   }
 
   render() {
     return (
-      <div class="fruit-basket">
-        <Filter filters={this.state.filters} handleChange={this.handleChange} />
-        <FilteredFruitList filter={this.state.currentFilter} fruit={this.state.fruit} />;
-      </div>
+      <FruitBasket
+        currentFilter={this.state.currentFilter}
+        filters={this.state.filters}
+        fruit={this.state.fruit}
+        updateFilterCallback={this.updateFilter}
+      />
     );
   }
 }
